@@ -1,0 +1,6 @@
+numpy
+Flask
+tensorflow-cpu
+gunicorn
+keras
+pillow
