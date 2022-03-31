@@ -7,16 +7,18 @@ import predict_veg_fruit as pvg
 import tensorflow as tf
 from keras.preprocessing import image
 from PIL import Image
+import requests
 
 
 app = Flask(__name__)
+
 
 UPLOAD_FOLDER = './upload/'
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-global model 
-model = tf.keras.models.load_model('http://foxandcat.net/ibm/model_v4.h5')
+
+model = tf.keras.models.load_model('model/model_v6.h5')
 
 
 @app.route('/', methods=['GET','POST'])
@@ -39,6 +41,8 @@ def submit_file():
             return render_template('index.html', result=result, confidence=f"{percent:.2f}%", writeup=writeup, thumbnail=url_for('static', filename=thumbnail))
         else:
             return render_template('index.html', result=f"I think it's {result} but I'm not so sure, could you try another picture?", confidence=f"{percent:.2f}%", writeup='', thumbnail=thumbnail)
+
+
 
 if __name__ == "__main__":
     app.run()
