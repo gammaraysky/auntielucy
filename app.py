@@ -9,7 +9,6 @@ from keras.preprocessing import image
 from PIL import Image
 import requests
 
-
 app = Flask(__name__)
 
 
