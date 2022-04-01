@@ -25,7 +25,7 @@ label.cameraButton:active { border-color: #CCC #EEE #EEE #CCC;}
 
 #preview                  { border:1px dashed grey;}
 
-body { background-color: #eee; }
+body { background-color: #fff; }
 .content                  { height: 100%; width:  90%; }
 .navbar                   { height: 87px; width: 100%; padding: 10px; }
 .navbtn                   { }  
