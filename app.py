@@ -22,7 +22,7 @@ model = tf.keras.models.load_model('model/model_v6.h5')
 
 @app.route('/', methods=['GET','POST'])
 def index():
-    return render_template('index.html', thumbnail=url_for('static', filename='layout/imageplaceholder.png'))
+    return render_template('index.html', thumbnail=url_for('static', filename='layout/imageplaceholder.jpg'))
 
 
 @app.route('/predict', methods=['POST'])
