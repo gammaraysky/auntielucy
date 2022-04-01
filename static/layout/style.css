@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Muli");
 
 * { margin: 0; padding: 0; }
-html, body { height: 100%; margin: 0; font-family:Muli;}
+html, body { height: 100%; margin: 0; font-family:Muli;overflow-x:no;}
 
 /* STYLING */
 .content                  { text-align:center; }
 .navbar                   { text-align:center; position:fixed; background:#fff; }
-.menu                     { position:fixed; }
+.menu                     { position:fixed;}
 .content-inside           { text-align:center; }  
 .footer                   { text-align:center; position:fixed; background:#fff; }
 
@@ -32,10 +32,10 @@ body { background-color: #fff; }
 .navbtnsize               { font-size:20px;}
 .logo                     { margin:0; height:85px; max-width:75% }
 
-.content-inside           { width: 100%; padding: 20px; padding-top: 115px; padding-bottom: 90px; }  
+.content-inside           { width: 100%; padding: 20px; padding-top: 115px; padding-bottom: 90px;}  
 
-#preview                  { width:80%; max-width:300px}
-#predResult               { width:100%; max-width:450px;}
+#preview                  { width:90%; max-width:350px}
+#predResult               { width:80%; max-width:450px;margin:0 auto;}
 .result                   { font-size:20pt; font-weight:bold; margin-bottom:0; padding: 10px; color:royalblue;}
 .confidence               { font-size:10pt; margin:0; padding:10px; color:royalblue;}
 .writeup                  { font-size:15pt; color:#444;}
