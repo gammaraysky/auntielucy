@@ -8,7 +8,7 @@ html, body { height: 100%; margin: 0; font-family:Muli;overflow-x:no;}
 .navbar                   { text-align:center; position:fixed; background:#fff; }
 .menu                     { position:fixed;}
 .content-inside           { text-align:center; }  
-.footer                   { text-align:center; position:fixed; background:#fff; }
+.footer                   { text-align:center; background:#fff; }
 
 .btn, label.cameraButton  { background-color: DodgerBlue; border: none; color: white; cursor: pointer; }
 .btn:hover, label.cameraButton:hover { background-color: RoyalBlue;  } 
@@ -32,7 +32,7 @@ body { background-color: #fff; }
 .navbtnsize               { font-size:20px;}
 .logo                     { margin:0; height:85px; max-width:75% }
 
-.content-inside           { width: 100%; padding: 20px; padding-top: 115px; padding-bottom: 90px;}  
+.content-inside           { width: 100%; padding: 20px; padding-top: 115px; padding-bottom: 90px; overflow:auto;}  
 
 #preview                  { width:90%; max-width:350px}
 #predResult               { width:80%; max-width:450px;margin:0 auto;}
@@ -94,7 +94,7 @@ body { background-color: #fff; }
   .confidence               { font-size:10pt; margin:0; padding:10px; color:royalblue;}
   .writeup                  { font-size:15pt; color:#444;}
 
-  .footer                   { height: 90px; width: 100%; padding: 10px; margin-top: -90px; }
+  .footer                   { position:fixed; height: 90px; width: 100%; padding: 10px; margin-top: -90px; }
   .btn, label.cameraButton  { display:inline-block; width: 60px; height: 60px; border-radius: 50%; border:5px #00ccff;}
   .btnsize                  { font-size:30px; vertical-align: baseline; padding-top:15px}
 }
