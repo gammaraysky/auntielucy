@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css?family=Muli");
+
+* { margin: 0; padding: 0; }
+html, body { height: 100%; margin: 0; font-family:Muli;}
+
+/* STYLING */
+.content                  { text-align:center; }
+.navbar                   { text-align:center; position:fixed; background:#fff; }
+.menu                     { position:fixed; }
+.content-inside           { text-align:center; }  
+.footer                   { text-align:center; position:fixed; background:#fff; }
+
+.btn, label.cameraButton  { background-color: DodgerBlue; border: none; color: white; cursor: pointer; }
+.btn:hover, label.cameraButton:hover { background-color: RoyalBlue;  } 
+.navbtn                   { background:transparent; border: none; color: #777; cursor: pointer; }
+.navbtn:hover             { color: #111; } 
+
+/* This is the part that actually hides the 'Choose file' text box for camera inputs */
+label.cameraButton input[accept*="camera"] { display: none; }
+label.cameraButton input[type="submit"] { display: none; }
+label.cameraButton button { display: none;}
+
+/* Look like a clicked/depressed button */
+label.cameraButton:active { border-color: #CCC #EEE #EEE #CCC;}
+
+#preview                  { border:1px dashed grey;}
+
+body { background-color: #eee; }
+.content                  { height: 100%; width:  90%; }
+.navbar                   { height: 87px; width: 100%; padding: 10px; }
+.navbtn                   { }  
+.navbtnsize               { font-size:20px;}
+.logo                     { height:85px; max-width:75% }
+
+.content-inside           { width: 100%; padding: 20px; padding-top: 115px; padding-bottom: 90px; }  
+
+#preview                  { width:80%; max-width:300px}
+.result                   { font-size:20pt; font-weight:bold; margin-bottom:0; padding: 10px; color:royalblue;}
+.confidence               { font-size:10pt; margin:0; padding:10px; color:royalblue;}
+.writeup                  { font-size:15pt; color:#444;}
+
+.footer                   { height: 90px; width: 100%; padding: 10px; margin-top: -90px; }
+.btn, label.cameraButton  { display:inline-block; width: 60px; height: 60px; border-radius: 50%; border:5px #00ccff;}
+.btnsize                  { font-size:30px; vertical-align: baseline; padding-top:15px}
+
+
+
+
+
+/* For Desktop View */
+@media screen and (min-width: 768px) {
+
+}
+
+
+/* 
+@media screen and (min-device-width: 480px) and (max-device-width: 768px)
+{
+  body { background-color: blue;}
+  .content                  { height: 100%; width:  90%; }
+  .navbar                   { height: 70px; width: 100%; padding: 10px; }
+  .content-inside           {               width: 100%; padding: 20px; padding-top: 100px; padding-bottom: 70px; }  
+  .footer                   { height: 70px; width: 100%; padding: 10px; margin-top: -70px; }
+  
+  .btn, label.cameraButton  { padding: 10px 12px; font-size: 24px; border-radius: 100px;  }
+  .navbtn                   { font-size: 24px; }
+    
+  .logo                     { height:70px; }
+  
+  #preview                  { width:80%; }
+  
+  .result                   { font-size:18pt; font-weight:bold; margin-bottom:0; padding: 10px; color:royalblue;}
+  .confidence               { font-size:10pt; margin:0; padding:10px; color:royalblue;}
+  .writeup                  { font-size:15pt; color:#444;}
+}
+*/
+
+
+@media screen and (max-device-width: 480px) and (min-resolution: 200dpi)
+{
+  body { background-color: #fff; }
+  .content                  { height: 100%; width:  90%; }
+  .navbar                   { height: 87px; width: 100%; padding: 10px; }
+  .navbtn                   { }  
+  .navbtnsize               { font-size:20px;}
+  .logo                     { height:85px; max-width:75% }
+
+  .content-inside           { width: 100%; padding: 20px; padding-top: 115px; padding-bottom: 90px; }  
+  
+  #preview                  { width:80%; }
+  .result                   { font-size:20pt; font-weight:bold; margin-bottom:0; padding: 10px; color:royalblue;}
+  .confidence               { font-size:10pt; margin:0; padding:10px; color:royalblue;}
+  .writeup                  { font-size:15pt; color:#444;}
+
+  .footer                   { height: 90px; width: 100%; padding: 10px; margin-top: -90px; }
+  .btn, label.cameraButton  { display:inline-block; width: 60px; height: 60px; border-radius: 50%; border:5px #00ccff;}
+  .btnsize                  { font-size:30px; vertical-align: baseline; padding-top:15px}
+}
