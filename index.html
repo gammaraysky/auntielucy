@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/layout/style.css"/> 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='layout/style.css') }}"/> 
+    <style>
+
+    </style>
+
+    <title>Auntie Lucy</title>
+</head>
+<body>
+    <div class="content">
+        <div class="navbar">
+            
+            <!-- Add font awesome icons to buttons  -->
+            <div class="menu">
+                <button class="navbtn"><i class="fa fa-bars navbtnsize"></i></button>
+            </div>
+            <img src="../static/layout/logo.png" class="logo">
+        </div>
+        <div class="content-inside">
+            <img id="preview" name="preview" src="{{ thumbnail }}"></img><br/> <!-- {{ thumbnail }} -->
+            <div id="predResult">
+                <p class="result">{{ result }}</p>
+                <p class="confidence">{{ confidence }}</p>
+                <p class="writeup">{{ writeup }}</p>
+            </div>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                
+        </div>
+    </div>
+    <footer class="footer">
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <!--<button class="btn"><i class="fa fa-camera"></i></button>-->
+            <label class="cameraButton"><i class="fa fa-camera btnsize"></i>
+                <input type="file" id="imageinput" name="file" accept="image/*;capture=camera" required>
+            </label>
+            <label class="cameraButton"><i class="fa fa-search btnsize"></i>
+                <input type="submit">
+            </label>
+
+        </form>
+        
+        <!-- this is more efficient for large files
+        <img id="blah" alt="your image" width="100" height="100" />
+
+        <input type="file" 
+            onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">
+        -->
+    </footer>
+    <script>
+
+
+
+        // listener. if image uploaded, display 150x150 preview.
+        let imgInput = document.getElementById('imageinput');
+        imgInput.addEventListener('change', function (e) {
+            if (e.target.files) {
+                let imageFile = e.target.files[0];
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var img = document.createElement("img");
+                    img.onload = function (event) {
+                        // Dynamically create a canvas element
+                        var canvas = document.createElement("canvas");
+
+                        // var canvas = document.getElementById("canvas");
+                        var ctx = canvas.getContext("2d");
+
+
+                        // read current size settings for preview window
+                        var MAX_WIDTH = document.getElementById("preview").width;
+                        var MAX_HEIGHT = document.getElementById("preview").width;
+
+                        var width = img.width;
+                        var height = img.height;
+
+                        // Change the resizing logic
+                        if (width > height) {
+                            if (width > MAX_WIDTH) {
+                                height = height * (MAX_WIDTH / width);
+                                width = MAX_WIDTH;
+                            }
+                        } else {
+                            if (height > MAX_HEIGHT) {
+                                width = width * (MAX_HEIGHT / height);
+                                height = MAX_HEIGHT;
+                            }
+                        }
+
+                        canvas.width = width;
+                        canvas.height = height;
+                        var ctx = canvas.getContext("2d");
+                        ctx.drawImage(img, 0, 0, width, height);
+
+                        // Show resized image in preview element
+                        var dataurl = canvas.toDataURL(imageFile.type);
+                        document.getElementById("preview").src = dataurl;
+                    }
+                    img.src = e.target.result;
+                }
+                reader.readAsDataURL(imageFile);
+                document.getElementById("predResult").innerHTML = " "
+
+            }
+        });
+    </script>
+</body>
+</html>
