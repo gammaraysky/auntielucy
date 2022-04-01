@@ -26,15 +26,16 @@ label.cameraButton:active { border-color: #CCC #EEE #EEE #CCC;}
 #preview                  { border:1px dashed grey;}
 
 body { background-color: #fff; }
-.content                  { height: 100%; width:  90%; }
+.content                  { height: 100%; width: 100%; }
 .navbar                   { height: 87px; width: 100%; padding: 10px; }
 .navbtn                   { }  
 .navbtnsize               { font-size:20px;}
-.logo                     { height:85px; max-width:75% }
+.logo                     { margin:0; height:85px; max-width:75% }
 
 .content-inside           { width: 100%; padding: 20px; padding-top: 115px; padding-bottom: 90px; }  
 
 #preview                  { width:80%; max-width:300px}
+#predResult               { width:100%; max-width:450px;}
 .result                   { font-size:20pt; font-weight:bold; margin-bottom:0; padding: 10px; color:royalblue;}
 .confidence               { font-size:10pt; margin:0; padding:10px; color:royalblue;}
 .writeup                  { font-size:15pt; color:#444;}
@@ -79,7 +80,7 @@ body { background-color: #fff; }
 @media screen and (max-device-width: 480px) and (min-resolution: 200dpi)
 {
   body { background-color: #fff; }
-  .content                  { height: 100%; width:  90%; }
+  .content                  { height: 100%; width:  95%; }
   .navbar                   { height: 87px; width: 100%; padding: 10px; }
   .navbtn                   { }  
   .navbtnsize               { font-size:20px;}
@@ -88,6 +89,7 @@ body { background-color: #fff; }
   .content-inside           { width: 100%; padding: 20px; padding-top: 115px; padding-bottom: 90px; }  
   
   #preview                  { width:80%; }
+  #predResult               { width:100%; }
   .result                   { font-size:20pt; font-weight:bold; margin-bottom:0; padding: 10px; color:royalblue;}
   .confidence               { font-size:10pt; margin:0; padding:10px; color:royalblue;}
   .writeup                  { font-size:15pt; color:#444;}

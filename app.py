@@ -22,7 +22,7 @@ model = tf.keras.models.load_model('model/model_v6.h5')
 
 @app.route('/', methods=['GET','POST'])
 def index():
-    return render_template('index.html', thumbnail=url_for('static', filename='images/Apple.jpg'))
+    return render_template('index.html', thumbnail=url_for('static', filename='layout/imageplaceholder.png'))
 
 
 @app.route('/predict', methods=['POST'])
@@ -39,7 +39,7 @@ def submit_file():
         if (confidence>0.7):
             return render_template('index.html', result=result, confidence=f"{percent:.2f}%", writeup=writeup, thumbnail=url_for('static', filename=thumbnail))
         else:
-            return render_template('index.html', result=f"I think it's {result} but I'm not so sure, could you try another picture?", confidence=f"{percent:.2f}%", writeup='', thumbnail=thumbnail)
+            return render_template('index.html', result='', confidence=f"{percent:.2f}%", writeup=f"I think it's {result} but I'm not so sure, could you try another picture?", thumbnail=url_for('static', filename=thumbnail))
 
 
 
