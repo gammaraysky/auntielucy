@@ -6,13 +6,15 @@ html, body { height: 100%; margin: 0; font-family:Muli;overflow-x:no;}
 /* STYLING */
 .content                  { text-align:center; }
 .navbar                   { text-align:center; position:fixed; background:#fff; }
-.menu                     { position:fixed;}
+.menu                     { position:fixed;text-align:left;}
 .content-inside           { text-align:center; }  
 .footer                   { text-align:center; background:#fff; }
-
+#menu_popup_container     { display:none; text-align:left; background-color: #f2f2f2; margin-top:5px;padding:10px}
+.menu_item, .menu_item>a  { list-style-type: none; color: #555; font-weight:bold; text-decoration:none;}
+.menu_item>a:hover, .menu_item> a:active     { color: #048}
 .btn, label.cameraButton  { background-color: DodgerBlue; border: none; color: white; cursor: pointer; }
 .btn:hover, label.cameraButton:hover { background-color: RoyalBlue;  } 
-.navbtn                   { background:transparent; border: none; color: #777; cursor: pointer; }
+.navbtn                   { background:transparent; border: none; color: #555; cursor: pointer; }
 .navbtn:hover             { color: #111; } 
 
 /* This is the part that actually hides the 'Choose file' text box for camera inputs */
