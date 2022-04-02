@@ -13,6 +13,18 @@
     </style>
 
     <title>Auntie Lucy</title>
+    <script>
+        function togglepopup() {
+            console.log('togglepopup');
+            if (document.getElementById('menu_popup_container').style.display == 'block') {
+                document.getElementById('menu_popup_container').style.display = 'none';
+            }
+            else {
+                document.getElementById('menu_popup_container').style.display = 'block';
+            }
+        }
+
+    </script>
 </head>
 <body>
     <div class="content">
@@ -20,7 +32,15 @@
             
             <!-- Add font awesome icons to buttons  -->
             <div class="menu">
-                <button class="navbtn"><i class="fa fa-bars navbtnsize"></i></button>
+                <button class="navbtn" onclick="togglepopup()"><i class="fa fa-bars navbtnsize"></i></button>
+                <div id="menu_popup_container">
+                    <ul>
+                        <li class="menu_item"><a href="#">Account</a></li>
+                        <li class="menu_item"><a href="#">Discovery Dashboard</a></li>
+                        <li class="menu_item"><a href="#">Compare with Friends</a></li>
+                        <li class="menu_item"><a href="#">Share Pic to</a></li>
+                    </ul>
+                </div>
             </div>
             <img src="../static/layout/logo.png" class="logo">
         </div>
@@ -30,8 +50,25 @@
                 <p class="result">{{ result }}</p>
                 <p class="confidence">{{ confidence }}</p>
                 <p class="writeup">{{ writeup }}</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
             </div>
-                
+
+            
                 
         </div>
     </div>
