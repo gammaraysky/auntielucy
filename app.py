@@ -25,8 +25,10 @@ def index():
     return render_template('index.html', thumbnail=url_for('static', filename='layout/imageplaceholder.jpg'))
 
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET','POST'])
 def submit_file():
+    if request.method == 'GET':
+        return render_template('index.html', thumbnail=url_for('static', filename='layout/imageplaceholder.jpg'))
     if request.method == 'POST' and 'file' in request.files:
         image = request.files['file']
         im = Image.open(image)
